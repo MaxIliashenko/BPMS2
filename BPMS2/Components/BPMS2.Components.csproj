@@ -5,10 +5,16 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <RazorLangVersion>3.0</RazorLangVersion>
     <RootNamespace>BPMS.Components</RootNamespace>
+    <AssemblyVersion>1.0.21062.1</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Blazor" Version="20.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Form\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   
 

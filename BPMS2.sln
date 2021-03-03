@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Client", "BPMS2\Clien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Shared", "BPMS2\Shared\BPMS2.Shared.csproj", "{5094A789-9355-4773-B7C0-7493229E92DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Components", "BPMS2\BPMS2.Components\BPMS2.Components.csproj", "{C90E0A3E-114D-4FDB-81F6-B846F6AE3E01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Components", "BPMS2\Components\BPMS2.Components.csproj", "{C90E0A3E-114D-4FDB-81F6-B846F6AE3E01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,5 +39,14 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {452BF09D-A901-4E28-8187-63737FDBB007}
+	EndGlobalSection
+	GlobalSection(AutomaticVersions) = postSolution
+		UpdateAssemblyVersion = True
+		UpdateAssemblyFileVersion = False
+		UpdateAssemblyInfoVersion = False
+		AssemblyVersionSettings = None.None.DateStamp.IncrementWithResetOnIncrease
+		UpdatePackageVersion = False
+		AssemblyInfoVersionType = SettingsVersion
+		InheritWinAppVersionFrom = None
 	EndGlobalSection
 EndGlobal

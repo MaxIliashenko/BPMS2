@@ -8,16 +8,23 @@ Experimental Blazor-powered BPMS
 * Visual Studio 2019 16.9 or higher
 
 # Building
-## Using Visual Studio
-* restore NuGet packages
-* build js bundle
+### 1. Building JS bundle
 ```PowerShell
 cd <solution path>\BPMS2\Client\JSLib
 npm install
 npm run build
 ```
-## Using Powershell
+### 2a. Running in Visual Studio
+* restore NuGet packages
+* rebuild solution
+* set BPMS2.Server as startup project
+* run using Kestrel (not IIS Express)
+
+### 2b. Running in Powershell terminal
 ```PowerShell
 cd <solution path>
-
+dotnet restore --configfile NuGet.Config
+dotnet build
+dotnet run -p BPMS2\Server
 ```
+and navigate to https://localhost:5001

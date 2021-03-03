@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Server", "BPMS2\Server\BPMS2.Server.csproj", "{6E2D5C27-CC5D-4D69-AB97-83405DFE8249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Server", "Server\BPMS2.Server.csproj", "{6E2D5C27-CC5D-4D69-AB97-83405DFE8249}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Client", "BPMS2\Client\BPMS2.Client.csproj", "{82EADE59-661A-4D40-ACEF-644AB7E9CDB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Client", "Client\BPMS2.Client.csproj", "{82EADE59-661A-4D40-ACEF-644AB7E9CDB0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Shared", "BPMS2\Shared\BPMS2.Shared.csproj", "{5094A789-9355-4773-B7C0-7493229E92DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Shared", "Shared\BPMS2.Shared.csproj", "{5094A789-9355-4773-B7C0-7493229E92DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Components", "BPMS2\Components\BPMS2.Components.csproj", "{C90E0A3E-114D-4FDB-81F6-B846F6AE3E01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMS2.Components", "Components\BPMS2.Components.csproj", "{C90E0A3E-114D-4FDB-81F6-B846F6AE3E01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

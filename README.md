@@ -10,7 +10,7 @@ Experimental Blazor-powered BPMS
 # Building
 ### 1. Building JS bundle
 ```PowerShell
-cd <solution path>\BPMS2\Client\JSLib
+cd <solution path>\Client\JSLib
 npm install
 npm run build
 ```
@@ -25,6 +25,6 @@ npm run build
 cd <solution path>
 dotnet restore --configfile NuGet.Config
 dotnet build
-dotnet run -p BPMS2\Server
+dotnet run -p Server
 ```
 and navigate to https://localhost:5001

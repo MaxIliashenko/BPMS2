@@ -1,16 +1,30 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
+    <div class="sidebar @NavMenuCssClass">
+        <div>
+            <Sidebar />
+        </div>
+        <div class="footer">
+            <Copyright />
+        </div>
     </div>
 
     <div class="main">
-        <div class="top-row px-4 auth">
-        </div>
+        <Navbar />
 
         <div class="content px-4">
             @Body
         </div>
     </div>
 </div>
+
+
+@code {
+    string NavMenuCssClass { get; set; } = "";
+
+    void ToggleNavMenu()
+    {
+        NavMenuCssClass = string.IsNullOrEmpty(NavMenuCssClass) || NavMenuCssClass.Contains("d-none") ? "d-block d-xl-none" : "d-none d-xl-flex";
+    }
+}

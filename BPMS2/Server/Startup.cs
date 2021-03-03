@@ -62,10 +62,6 @@ namespace BPMS.Server
 
             app.UseRouting();
 
-            //app.UseIdentityServer();
-            //app.UseAuthentication();
-            //app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

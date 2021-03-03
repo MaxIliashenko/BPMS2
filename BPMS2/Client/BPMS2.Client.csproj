@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BPMS2.Components\BPMS2.Components.csproj" />
     <ProjectReference Include="..\Shared\BPMS2.Shared.csproj" />
   </ItemGroup>
 

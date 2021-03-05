@@ -1,0 +1,9 @@
+﻿@page "/form/{Title}"
+
+<h3>Form @Title</h3>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+}

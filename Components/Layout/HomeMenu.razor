@@ -1,0 +1,28 @@
+﻿@using BPMS.Shared.Layout
+
+<div class="m-5 row">
+    <div class="col-md-10 offset-md-1">
+        @foreach (var item in homeItems)
+        {
+            <a href="/form/@item.Id" class="d-inline-block homeMenu-item" style="width: 150px; height: 150px;">
+                <div style="width: 150px; height: 150px;">
+                    <span style="vertical-align: super; text-align: center; font-size: 110px;">
+                        <i class="fa-fw @item.FAIcon" style="vertical-align: super"></i>
+                    </span>
+                </div>
+                <h4 class="homeMenu-title text-center" style="width: 150px;">@item.Text</h4>
+            </a>
+        }
+    </div>
+</div>
+
+
+@code {
+    List<HomeItem> homeItems = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        homeItems.Add(new HomeItem { Id = new Guid("5fe8ca42-34b2-4162-a37e-aaf501144632"), Text = "Audit", FAIcon = "fad fa-file-search" });
+        homeItems.Add(new HomeItem { Id = new Guid("56db5895-4a5b-44b7-9e23-aaf700db4471"), Text = "Audit List", FAIcon = "fas fa-list" });
+    }
+}

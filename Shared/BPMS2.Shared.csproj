@@ -1,9 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyVersion>1.0.21064.4</AssemblyVersion>
-    <FileVersion>1.0.21064.0</FileVersion>
+    <AssemblyVersion>1.0.21064.9</AssemblyVersion>
+    <FileVersion>1.0.21064.5</FileVersion>
+    <RootNamespace>BPMS.Shared</RootNamespace>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

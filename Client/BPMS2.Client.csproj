@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>BPMS.Client</RootNamespace>
-    <AssemblyVersion>1.0.21064.46</AssemblyVersion>
-    <FileVersion>1.0.21064.8</FileVersion>
+    <AssemblyVersion>1.0.21066.5</AssemblyVersion>
+    <FileVersion>1.0.21066.5</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\lang\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 

@@ -5,8 +5,8 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <RazorLangVersion>3.0</RazorLangVersion>
     <RootNamespace>BPMS.Components</RootNamespace>
-    <AssemblyVersion>1.0.21064.38</AssemblyVersion>
-    <FileVersion>1.0.21064.8</FileVersion>
+    <AssemblyVersion>1.0.21066.5</AssemblyVersion>
+    <FileVersion>1.0.21066.5</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Form\" />
     <Folder Include="Controls\" />
   </ItemGroup>
 

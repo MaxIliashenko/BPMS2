@@ -1,3 +1,5 @@
+using BPMS.Shared.Interfaces.Services;
+using BPMS.Shared.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,7 +29,10 @@ namespace BPMS.Server
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BPMS WebAPI", Version = "v1" });
-            }); services.AddRazorPages();
+            }); 
+            services.AddRazorPages();
+
+            services.AddScoped<IMenuService, MenuService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

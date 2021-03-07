@@ -10,6 +10,8 @@ namespace BPMS.Client
     {
         public static async Task Main(string[] args)
         {
+            //await Task.Delay(3000); // This allows time for the debugger to attach before any client code runs
+
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
             

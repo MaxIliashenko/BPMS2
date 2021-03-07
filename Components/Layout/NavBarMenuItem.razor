@@ -1,0 +1,16 @@
+﻿@using BPMS.Shared.Layout
+
+<DxMenuItem Text="@MenuItem.Text" NavigateUrl="@MenuItem.Url" CssClass="@MenuItem.CSSClass" IconCssClass="@MenuItem.Icon" IconUrl="@MenuItem.IconUrl">
+    <Items>
+        @foreach (var item in MenuItem.ChildItems)
+                {
+        <NavBarMenuItem MenuItem="item" />
+        }
+    </Items>
+</DxMenuItem>
+
+@code {
+    [Parameter]
+    public MenuItem MenuItem { get; set; }
+
+}

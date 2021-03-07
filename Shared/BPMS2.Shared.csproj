@@ -2,13 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyVersion>1.0.21064.9</AssemblyVersion>
-    <FileVersion>1.0.21064.5</FileVersion>
+    <AssemblyVersion>1.0.21066.4</AssemblyVersion>
+    <FileVersion>1.0.21066.4</FileVersion>
     <RootNamespace>BPMS.Shared</RootNamespace>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\DAL\" />
   </ItemGroup>
 </Project>

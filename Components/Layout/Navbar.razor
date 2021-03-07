@@ -1,62 +1,24 @@
-﻿<div class="bg-primary text-white headerline">
+﻿@using BPMS.Shared.Layout
+@inject HttpClient Http
+
+<div class="bg-primary text-white headerline">
     <DxMenu Orientation="Orientation.Horizontal">
         <Items>
             <DxMenuItem Text="" IconCssClass="fad fa-home fa-2x" NavigateUrl="/" />
 
-            <DxMenuItem Text="Facilities">
-                <Items>
-                    <DxMenuItem Text="UI Setup" />
-                    <DxMenuItem Text="Slider images" />
-                    <DxMenuItem Text="Home Setup" />
-                    <DxMenuItem Text="News Management" />
-                    <DxMenuItem Text="Error Management" />
-                </Items>
-            </DxMenuItem>
-
-            <DxMenuItem Text="Sample app">
-                <Items>
-                    <DxMenuItem Text="New Document" NavigateUrl="form/New Document" />
-                    <DxMenuItem Text="List of Documents" NavigateUrl="form/List of Documents" />
-                </Items>
-            </DxMenuItem>
-
-            <DxMenuItem Text="" IconCssClass="fad fa-globe-americas fa-2x" CssClass="ml-auto">
-                <Items>
-                    <DxMenuItem Text="English" />
-                    <DxMenuItem Text="French" />
-                </Items>
-            </DxMenuItem>
-
-            <DxMenuItem Text="User Profile" CssClass="notoggle">
-                <TextTemplate>
-                    <i class="fas fa-user-circle fa-2x"></i>
-                </TextTemplate>
-                <SubMenuTemplate>
-                    <div class="w-100 user-profile">
-                        <div class="flex-column align-items-center justify-content-center">
-                            <div class="logo-container d-flex align-items-center justify-content-center">
-                                <div class="menu-icon-user-profile menu-icon menu-icon-large" />
-                            </div>
-                            <div class="user-name-container bm-3 mb-2">
-                                <div class="user-name-title text-muted text-center">User Name</div>
-                                <div class="user-name text-center">Admin</div>
-                            </div>
-                            <div class="d-flex justify-content-center log-off-btn">
-                                <DxButton Text="Log Off" RenderStyle="@ButtonRenderStyle.Secondary"></DxButton>
-                            </div>
-                        </div>
-                    </div>
-                </SubMenuTemplate>
-            </DxMenuItem>
+            @foreach (var mi in items)
+                {
+            <NavBarMenuItem MenuItem="mi" />
+            }
         </Items>
     </DxMenu>
 </div>
 
 @code  {
-    @*    public string ClickedMenuItem { get; set; } = "";
+    List<MenuItem> items = new();
 
-        void OnItemClick(MenuItemClickEventArgs e)
-        {
-        ClickedMenuItem = $"The '{e.ItemInfo.Text}' item has been clicked";
-        }
-    *@}
+    protected override async Task OnInitializedAsync()
+    {
+        items = await Http.GetFromJsonAsync<List<MenuItem>>("api/Home/GetMenu");
+    }
+}

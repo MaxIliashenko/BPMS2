@@ -1,0 +1,20 @@
+﻿@using BPMS.Shared.Form
+@using BPMS.Shared.Form.Controls
+
+@if (Column.Control != null)
+{
+    var c = Column.Control;
+    <ControlBase FormData="FormData" ControlData="c" />
+}
+
+@code {
+    [Parameter]
+    public Column Column { get; set; }
+    [Parameter]
+    public FormData FormData { get; set; }
+
+@*    protected override void OnParametersSet()
+    {
+        Console.WriteLine($"{Column.Control.ControlTypeName} [{Column.Control.ControlType}][{Column.Control.Id}][{Column.Control.Caption}][{Column.Control.GetType()}]");
+    }
+*@}

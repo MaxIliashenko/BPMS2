@@ -1,0 +1,25 @@
+﻿@using BPMS.Shared.Form
+@using BPMS.Shared.Form.Controls
+
+@if (!ControlData.IsContainer)
+{
+    @if (ControlData.ControlType == ControlType.TextBox)
+    {
+        <ControlTextBox FormData="FormData" ControlData="ControlData" />
+    }
+    else if (ControlData.ControlType == ControlType.NumericBox)
+    {
+        <ControlNumericBox FormData="FormData" ControlData="ControlData" />
+    }
+    else if (ControlData.ControlType == ControlType.CheckBox)
+    {
+        <ControlCheckBox FormData="FormData" ControlData="ControlData" />
+    }
+}
+
+@code {
+    [Parameter]
+    public ControlData ControlData { get; set; }
+    [Parameter]
+    public FormData FormData { get; set; }
+}

@@ -1,0 +1,23 @@
+﻿@using BPMS.Shared.Form.Controls
+@using BPMS.Shared.Form
+@using BPMS.Shared.UI
+
+@inject IStateNotificationService StateNotificationService
+
+@foreach (var c in Row.Columns)
+{
+    <ControlColumn FormData="FormData" Column="c"/>
+}
+
+@code {
+    [Parameter]
+    public Row Row { get; set; }
+    [Parameter]
+    public FormData FormData { get; set; }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+            StateNotificationService.CallRequestRefresh();
+    }
+}

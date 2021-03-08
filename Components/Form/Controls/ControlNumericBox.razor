@@ -1,0 +1,23 @@
+﻿@using BPMS.Shared.Form
+@using BPMS.Shared.Form.Controls
+@using BPMS.Shared.UI
+
+<DxFormLayoutItem Caption="@ControlData.Caption" ColSpanMd="@ControlData.ParentColumnWidth">
+    <Template>
+        <DxTextBox @bind-Text="@Value" DisplayFormat="@ControlData.Format"/>
+    </Template>
+</DxFormLayoutItem>
+
+@code {
+    [Parameter]
+    public ControlData ControlData { get; set; }
+    [Parameter]
+    public FormData FormData { get; set; }
+
+    string Value { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        Value = FormData.FormObject[ControlData.Id].ToString();
+    }
+}

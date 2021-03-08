@@ -1,0 +1,23 @@
+﻿@using BPMS.Shared.Form
+@using BPMS.Shared.Form.Controls
+@using BPMS.Shared.UI
+
+<DxFormLayoutItem Caption="@ControlData.Caption" ColSpanMd="@ControlData.ParentColumnWidth">
+    <Template>
+        <DxCheckBox @bind-Checked="@Value" />
+    </Template>
+</DxFormLayoutItem>
+
+@code {
+    [Parameter]
+    public ControlData ControlData { get; set; }
+    [Parameter]
+    public FormData FormData { get; set; }
+
+    bool? Value { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        Value = FormData.FormObject[ControlData.Id] as bool?;
+    }
+}

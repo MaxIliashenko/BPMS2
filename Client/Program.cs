@@ -1,3 +1,4 @@
+using BPMS.Shared.UI;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -10,8 +11,6 @@ namespace BPMS.Client
     {
         public static async Task Main(string[] args)
         {
-            //await Task.Delay(3000); // This allows time for the debugger to attach before any client code runs
-
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
             
@@ -20,6 +19,8 @@ namespace BPMS.Client
 
             // Supply HttpClient instances that include access tokens when making requests to the server project
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("BPMS2.ServerAPI"));
+
+            builder.Services.AddScoped<IStateNotificationService, StateNotificationService>();
 
             await builder.Build().RunAsync();
         }

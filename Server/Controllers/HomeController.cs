@@ -2,6 +2,7 @@
 using BPMS.Shared.Layout;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,9 +13,12 @@ namespace BPMS.Server.Controllers
     public class HomeController : ControllerBase
     {
         private IMenuService _menuService { get; }
-        public HomeController(IMenuService menuService)
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(IMenuService menuService, ILogger<HomeController> logger)
         {
             _menuService = menuService;
+            _logger = logger;
         }
 
         [HttpGet]

@@ -1,7 +1,37 @@
-﻿<h3>Form with id @Id</h3>
+﻿@using BPMS.Shared.Form
+@using BPMS.Components.Form.Controls
+@using BPMS.Shared.UI
+
+@inject HttpClient Http
+@inject IStateNotificationService StateNotificationService
+
+<h2>@form.Title (@Id)</h2>
+
+<DxFormLayout ItemSizeMode="SizeMode.Large">
+    @foreach (var c in form.Rows)
+    {
+        <ControlRow FormData="form" Row="c" />
+    }
+</DxFormLayout>
 
 @code {
     [Parameter]
     public string Id { get; set; }
 
+    FormData form = new();
+
+    protected override void OnInitialized()
+    {
+        StateNotificationService.RefreshRequested += () =>
+        {
+            Console.WriteLine("RefreshRequested");
+            StateHasChanged();
+        };
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        Console.WriteLine($"Get form data {Id}");
+        form = await Http.GetFromJsonAsync<FormData>($"api/Form/GetForm/{Id}");
+    }
 }

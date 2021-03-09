@@ -2,8 +2,6 @@
 {
     public class TextBox : ControlData
     {
-        public string Placeholder { get; set; }
-
         public TextBox(string id, string caption, string placeholder = "")
         {
             Id = id;

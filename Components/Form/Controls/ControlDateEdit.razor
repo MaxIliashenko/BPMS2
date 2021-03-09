@@ -1,0 +1,26 @@
+﻿@using BPMS.Shared.Form
+
+<DxFormLayoutItem Caption="@ControlData.Caption" ColSpanMd="@ControlData.ParentColumnWidth">
+    <Template>
+        <DxDateEdit @bind-Date="@Value"
+                    TimeSectionVisible="@ControlData.IsDateTimeWithTime"
+                    ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                    NullText="@ControlData.Placeholder" />
+    </Template>
+</DxFormLayoutItem>
+
+@code {
+    [Parameter]
+    public ControlData ControlData { get; set; }
+    [Parameter]
+    public FormData FormData { get; set; }
+
+    DateTime? Value { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        if (DateTime.TryParse(FormData.FormObject[ControlData.Id].ToString(), out var val))
+            Value = val;
+        //Console.WriteLine($"DateEdit [{ControlData.Id}][{FormData.FormObject[ControlData.Id]}][{val}][{Value}]");
+    }
+}

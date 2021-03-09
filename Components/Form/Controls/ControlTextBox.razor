@@ -2,7 +2,7 @@
 
 <DxFormLayoutItem Caption="@ControlData.Caption" ColSpanMd="@ControlData.ParentColumnWidth">
     <Template>
-        <DxTextBox @bind-Text="@Value"></DxTextBox>
+        <DxTextBox @bind-Text="@Value" NullText="@ControlData.Placeholder" ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"/>
     </Template>
 </DxFormLayoutItem>
 
@@ -12,7 +12,7 @@
     [Parameter]
     public FormData FormData { get; set; }
 
-    string Value { get; set; } = "empty";
+    string Value { get; set; } = "";
 
     protected override void OnParametersSet()
     {

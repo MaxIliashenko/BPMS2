@@ -15,6 +15,14 @@
     {
         <ControlCheckBox FormData="FormData" ControlData="ControlData" />
     }
+    else if (ControlData.ControlType == ControlType.Label)
+    {
+        <ControlLabel FormData="FormData" ControlData="ControlData" />
+    }
+    else if (ControlData.ControlType == ControlType.DateEdit)
+    {
+        <ControlDateEdit FormData="FormData" ControlData="ControlData" />
+    }
 }
 
 @code {

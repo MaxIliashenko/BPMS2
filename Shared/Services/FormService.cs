@@ -1,4 +1,5 @@
-﻿using BPMS.Shared.Form;
+﻿using System;
+using BPMS.Shared.Form;
 using BPMS.Shared.Form.Controls;
 using BPMS.Shared.Interfaces.Services;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace BPMS.Shared.Services
             row.Columns.Add(col);
 
             var col2 = new Column("col2", 6);
-            col2.SetControl(new TextBox("initiator", "Initiator"));
+            col2.SetControl(new TextBox("initiator", "Initiator","Enter data"));
             f.FormObject["initiator"] = "Developer";
             row.Columns.Add(col2);
 
@@ -34,10 +35,23 @@ namespace BPMS.Shared.Services
 
             var col4 = new Column("col4", 6);
             col4.SetControl(new NumericBox("number", "Number", "N2"));
-            f.FormObject["number"] = 25;
+            f.FormObject["number"] = 25.17;
             row2.Columns.Add(col4);
 
             f.Rows.Add(row2);
+
+            var row3 = new Row("row3");
+
+            var col5 = new Column("col5", 6);
+            col5.SetControl(new Label("label", "Very long label to test alignment"));
+            row3.Columns.Add(col5);
+
+            var col6 = new Column("col6", 6);
+            col6.SetControl(new DateEdit("created", "Created at"));
+            f.FormObject["created"] = new DateTime(2021, 3, 8, 21, 13, 24);
+            row3.Columns.Add(col6);
+
+            f.Rows.Add(row3);
 
             return f;
         }

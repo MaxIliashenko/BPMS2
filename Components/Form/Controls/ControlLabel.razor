@@ -1,0 +1,14 @@
+﻿@using BPMS.Shared.Form
+
+<DxFormLayoutItem ColSpanMd="@ControlData.ParentColumnWidth">
+    <Template>
+        <span class="col-form-label col-form-label-lg dxbs-fl-cpt">@ControlData.Caption</span>
+    </Template>
+</DxFormLayoutItem>
+
+@code {
+    [Parameter]
+    public ControlData ControlData { get; set; }
+    [Parameter]
+    public FormData FormData { get; set; }
+}

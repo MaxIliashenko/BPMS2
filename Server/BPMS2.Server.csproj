@@ -4,8 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>BPMS2.Server-B3C16E8A-C5A5-4E60-A037-A19FC237BC54</UserSecretsId>
     <RootNamespace>BPMS.Server</RootNamespace>
-    <AssemblyVersion>1.0.21067.58</AssemblyVersion>
-    <FileVersion>1.0.21067.58</FileVersion>
+    <AssemblyVersion>1.0.21068.16</AssemblyVersion>
+    <FileVersion>1.0.21068.16</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 

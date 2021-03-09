@@ -1,5 +1,5 @@
 # BPMS2
-Experimental Blazor-powered BPMS
+Experimental Blazor-powered [BPMS](https://www.interfacing.com/Rapid-Application-Development-Tools)
 
 # Prerequisites
 * [.NET 5 SDK 5.0.200 or higher](https://dotnet.microsoft.com/download/dotnet/5.0)

@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>BPMS2.Server-B3C16E8A-C5A5-4E60-A037-A19FC237BC54</UserSecretsId>
     <RootNamespace>BPMS.Server</RootNamespace>
-    <AssemblyVersion>1.0.21070.9</AssemblyVersion>
-    <FileVersion>1.0.21070.9</FileVersion>
+    <AssemblyVersion>1.0.21070.12</AssemblyVersion>
+    <FileVersion>1.0.21070.12</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 

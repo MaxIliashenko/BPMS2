@@ -4,7 +4,7 @@ using BPMS.Shared.Localization;
 using BPMS.Shared.Security;
 using System.Collections.Generic;
 
-namespace BPMS.Shared.Services
+namespace BPMS.Server.Services
 {
     public class MenuService : IMenuService
     {

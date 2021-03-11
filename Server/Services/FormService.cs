@@ -4,7 +4,7 @@ using BPMS.Shared.Interfaces.Services;
 using System;
 using System.Threading.Tasks;
 
-namespace BPMS.Shared.Services
+namespace BPMS.Server.Services
 {
     public class FormService : IFormService
     {

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BPMS.Shared.Services
+namespace BPMS.Server.Services
 {
     public class TaskService : ITaskService
     {

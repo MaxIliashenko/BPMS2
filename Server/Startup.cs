@@ -1,6 +1,5 @@
+using BPMS.Server.Services;
 using BPMS.Shared.Interfaces.Services;
-using BPMS.Shared.Services;
-using BPMS.Shared.UI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

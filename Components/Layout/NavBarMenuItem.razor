@@ -3,8 +3,8 @@
 <DxMenuItem Text="@MenuItem.Text" NavigateUrl="@MenuItem.Url" CssClass="@MenuItem.CSSClass" IconCssClass="@MenuItem.Icon" IconUrl="@MenuItem.IconUrl">
     <Items>
         @foreach (var item in MenuItem.ChildItems)
-                {
-        <NavBarMenuItem MenuItem="item" />
+        {
+            <NavBarMenuItem MenuItem="item" />
         }
     </Items>
 </DxMenuItem>

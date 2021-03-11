@@ -1,0 +1,58 @@
+﻿@using BPMS.Shared.Layout
+
+<DxTreeViewNode Text="@Item.Text" IconCssClass="@Icon" BadgeText="@Badge" Expanded="@IsExpanded" NavigateUrl="@NavURL">
+    <Nodes>
+        @foreach (var child in Item.ChildItems)
+                {
+        <TaskTreeViewItem Item="child" />
+        }
+    </Nodes>
+</DxTreeViewNode>
+
+@code {
+    [Parameter]
+    public TaskTreeItem Item { get; set; }
+
+    string Icon
+    {
+        get
+        {
+            var i = "";
+            switch (Item.ItemType)
+            {
+                case TaskTreeItemType.User:
+                    i = "fad fa-user-alien";
+                    break;
+                case TaskTreeItemType.Role:
+                    i = "fad fa-users";
+                    break;
+                case TaskTreeItemType.Folder:
+                    i = "far fa-folder";
+                    break;
+            }
+            if (i.Length > 0)
+                i += " fa-lg mr-1";
+            return i;
+        }
+    }
+
+    string Badge => Item.ItemType == TaskTreeItemType.Folder && Item.TasksCount > 0 ? $"{Item.NewTasksCount}/{Item.TasksCount}" : null;
+
+    bool IsExpanded => Item.ItemType == TaskTreeItemType.User || Item.ItemType == TaskTreeItemType.Role;
+
+    string NavURL
+    {
+        get
+        {
+            switch (Item.ItemType)
+            {
+                case TaskTreeItemType.Folder:
+                    return $"tasks/{Item.Id}/{Item.Text}";
+                case TaskTreeItemType.TaskFolder:
+                    return $"tasks/{Item.Id}/{Item.Text}";
+                default:
+                    return "";
+            }
+        }
+    }
+}

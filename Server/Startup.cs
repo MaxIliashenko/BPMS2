@@ -34,6 +34,7 @@ namespace BPMS.Server
             services.AddRazorPages();
 
             services.AddScoped<IMenuService, MenuService>();
+            services.AddScoped<ITaskService, TaskService>();
             services.AddScoped<IFormService, FormService>();
         }
 

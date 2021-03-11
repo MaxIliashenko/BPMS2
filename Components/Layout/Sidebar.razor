@@ -1,4 +1,7 @@
-﻿<div class="bg-primary text-white p-1 headerline">
+﻿@using BPMS.Shared.Layout
+@inject HttpClient Http
+
+<div class="bg-primary text-white p-1 headerline">
     <div class="d-inline-block mx-3"><i class="fad fa-user-alien fa-2x"></i></div>
     <div class="d-inline-block headerline"><span class="zh1 align-middle">Test User</span></div>
 </div>
@@ -6,40 +9,10 @@
 <div class="bg-white">
     <DxTreeView AllowSelectNodes="true" @ref="@TaskTree">
         <Nodes>
-            <DxTreeViewNode Text="Test User" IconCssClass="fad fa-lg fa-user-alien mr-1" Expanded="true">
-                <Nodes>
-                    <DxTreeViewNode Text="Pending Tasks" IconCssClass="far fa-lg fa-folder mr-1" BadgeText="1/4" Expanded="true">
-                        <Nodes>
-                            <DxTreeViewNode Text="Task Type 1" NavigateUrl="form/Task Type 1" />
-                            <DxTreeViewNode Text="Task Type 2" NavigateUrl="form/Task Type 2" />
-                        </Nodes>
-                    </DxTreeViewNode>
-                    <DxTreeViewNode Text="Drafts" IconCssClass="far fa-lg fa-folder mr-1" />
-                    <DxTreeViewNode Text="Completed Tasks" IconCssClass="far fa-lg fa-folder mr-1" BadgeText="2/5">
-                        <Nodes>
-                            <DxTreeViewNode Text="Task Type 1" NavigateUrl="form/Task Type 1 a" />
-                            <DxTreeViewNode Text="Task Type 2" NavigateUrl="form/Task Type 2 a" />
-                        </Nodes>
-                    </DxTreeViewNode>
-                </Nodes>
-            </DxTreeViewNode>
-            <DxTreeViewNode Text="Developers" IconCssClass="fad fa-lg fa-users mr-1" Expanded="true">
-                <Nodes>
-                    <DxTreeViewNode Text="Pending Tasks" IconCssClass="far fa-lg fa-folder mr-1" BadgeText="0/4">
-                        <Nodes>
-                            <DxTreeViewNode Text="Task Type 1" NavigateUrl="form/Task Type 1 b" />
-                            <DxTreeViewNode Text="Task Type 2" NavigateUrl="form/Task Type 2 b" />
-                        </Nodes>
-                    </DxTreeViewNode>
-                    <DxTreeViewNode Text="Drafts" IconCssClass="far fa-lg fa-folder mr-1" />
-                    <DxTreeViewNode Text="Completed Tasks" IconCssClass="far fa-lg fa-folder mr-1" BadgeText="0/5">
-                        <Nodes>
-                            <DxTreeViewNode Text="Task Type 1" NavigateUrl="form/Task Type 1 c" />
-                            <DxTreeViewNode Text="Task Type 2" NavigateUrl="form/Task Type 2 c" />
-                        </Nodes>
-                    </DxTreeViewNode>
-                </Nodes>
-            </DxTreeViewNode>
+            @foreach (var child in items)
+            {
+                <TaskTreeViewItem Item="child" />
+            }
         </Nodes>
     </DxTreeView>
 </div>
@@ -48,4 +21,10 @@
 @code {
     DxTreeView TaskTree;
 
+    List<TaskTreeItem> items = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        items = await Http.GetFromJsonAsync<List<TaskTreeItem>>("api/Task/GetTaskTree");
+    }
 }

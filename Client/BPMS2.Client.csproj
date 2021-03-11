@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>BPMS.Client</RootNamespace>
-    <AssemblyVersion>1.0.21068.16</AssemblyVersion>
-    <FileVersion>1.0.21068.16</FileVersion>
+    <AssemblyVersion>1.0.21070.9</AssemblyVersion>
+    <FileVersion>1.0.21070.9</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 

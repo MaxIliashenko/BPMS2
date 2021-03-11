@@ -43,7 +43,6 @@ namespace BPMS.Server
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseMigrationsEndPoint();
                 app.UseWebAssemblyDebugging();
             }
             else

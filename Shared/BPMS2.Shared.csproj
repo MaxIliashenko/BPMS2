@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyVersion>1.0.21070.13</AssemblyVersion>
-    <FileVersion>1.0.21070.13</FileVersion>
+    <AssemblyVersion>1.0.21070.15</AssemblyVersion>
+    <FileVersion>1.0.21070.15</FileVersion>
     <RootNamespace>BPMS.Shared</RootNamespace>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>

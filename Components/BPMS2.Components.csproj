@@ -5,8 +5,8 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <RazorLangVersion>3.0</RazorLangVersion>
     <RootNamespace>BPMS.Components</RootNamespace>
-    <AssemblyVersion>1.0.21070.15</AssemblyVersion>
-    <FileVersion>1.0.21070.15</FileVersion>
+    <AssemblyVersion>1.0.21070.16</AssemblyVersion>
+    <FileVersion>1.0.21070.16</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 

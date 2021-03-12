@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <UserSecretsId>BPMS2.Server-B3C16E8A-C5A5-4E60-A037-A19FC237BC54</UserSecretsId>
     <RootNamespace>BPMS.Server</RootNamespace>
-    <AssemblyVersion>1.0.21070.18</AssemblyVersion>
-    <FileVersion>1.0.21070.18</FileVersion>
+    <AssemblyVersion>1.0.21071.0</AssemblyVersion>
+    <FileVersion>1.0.21071.0</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.0-preview.2.21154.6" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.0" />

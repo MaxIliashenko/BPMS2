@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <RazorLangVersion>3.0</RazorLangVersion>
     <RootNamespace>BPMS.Components</RootNamespace>
-    <AssemblyVersion>1.0.21070.16</AssemblyVersion>
-    <FileVersion>1.0.21070.16</FileVersion>
+    <AssemblyVersion>1.0.21071.0</AssemblyVersion>
+    <FileVersion>1.0.21071.0</FileVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 

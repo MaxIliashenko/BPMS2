@@ -3,6 +3,7 @@ using BPMS.Shared.Layout;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -25,5 +26,10 @@ namespace BPMS.Server.Controllers
         [Route("GetTaskTree")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<List<TaskTreeItem>>> GetTaskList() => await _taskService.GetTaskTree();
+
+        [HttpGet]
+        [Route("GetTaskList/{folderId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<List<TaskItem>>> GetTaskList(Guid folderId) => await _taskService.GetTaskList(folderId);
     }
 }

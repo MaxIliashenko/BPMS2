@@ -25,7 +25,7 @@ namespace BPMS.Server.Services
             var ud = new TaskTreeItem(Guid.NewGuid(), TaskTreeItemType.Folder, "Drafts".loc(), 0, 0);
             u.ChildItems.Add(ud);
 
-            var uc = new TaskTreeItem(Guid.NewGuid(), TaskTreeItemType.Folder, "Completed Tasks".loc(), 25,0);
+            var uc = new TaskTreeItem(Guid.NewGuid(), TaskTreeItemType.Folder, "Completed Tasks".loc(), 25, 0);
             u.ChildItems.Add(uc);
             uc.ChildItems.Add(new TaskTreeItem(Guid.NewGuid(), TaskTreeItemType.TaskFolder, "Task Type 1"));
             uc.ChildItems.Add(new TaskTreeItem(Guid.NewGuid(), TaskTreeItemType.TaskFolder, "Task Type 2"));
@@ -67,6 +67,26 @@ namespace BPMS.Server.Services
             rmc.ChildItems.Add(new TaskTreeItem(Guid.NewGuid(), TaskTreeItemType.TaskFolder, "Task Type 2"));
             rmc.ChildItems.Add(new TaskTreeItem(Guid.NewGuid(), TaskTreeItemType.TaskFolder, "Task Type 3"));
 
+            return res;
+        }
+
+        public async Task<List<TaskItem>> GetTaskList(Guid folderId)
+        {
+            var res = new List<TaskItem>();
+            var rnd = new Random();
+
+            var q = rnd.Next(5, 30);
+            for (int i = 0; i < q; i++)
+                res.Add(new TaskItem()
+                {
+                    Id = Guid.NewGuid(),
+                    Title = $"Task {i:00}",
+                    Proirity = (TaskPriorityEnum) rnd.Next(5),
+                    Created = DateTime.Today.AddHours(-rnd.Next(100, 200)),
+                    Done = DateTime.Today.AddHours(-rnd.Next(50, 100)),
+                    Sender = "admin",
+                    IsNew = rnd.Next(100) % 2 == 0
+                });
             return res;
         }
     }

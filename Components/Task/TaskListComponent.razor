@@ -1,0 +1,80 @@
+﻿@using BPMS.Shared.Layout
+@using BPMS.Shared.Localization
+@inject HttpClient Http
+
+<h2>@Header</h2>
+
+<DxDataGrid Data="@tasks"
+            InnerComponentSizeMode="SizeMode.Medium"
+            CssClass="text"
+            PageSize="20"
+            ShowPager="true"
+            PagerPageSizeSelectorVisible="true"
+            PagerAllDataRowsItemVisible="true"
+            PagerAllowedPageSizes=@(new[] {10, 20, 40})
+            PagerNavigationMode=PagerNavigationMode.InputBox
+            HtmlRowDecoration="@OnHtmlRowDecoration">
+
+    <DxDataGridColumn Field="@nameof(TaskItem.Flag)" Caption="@FlagHeader" Width="50px" />
+
+    <DxDataGridColumn Field="@nameof(TaskItem.Proirity)" Caption="@PriorityHeader" Width="50px" TextAlignment="DataGridTextAlign.Center">
+        <DisplayTemplate>
+            @{ var item = context as TaskItem;}
+
+            @if (item.Proirity == TaskPriorityEnum.Low)
+            {
+            <i class="fad fa-lg fa-fw fa-signal-alt-1" style="color: greenyellow"></i>
+            }
+                    else if (item.Proirity == TaskPriorityEnum.Medium)
+                    {
+            <i class="fad fa-lg fa-fw fa-signal-alt-2" style="color: darkgreen"></i>
+            }
+                    else if (item.Proirity == TaskPriorityEnum.High)
+                    {
+            <i class="fad fa-lg fa-fw fa-signal-alt-3" style="color: orange"></i>
+            }
+                    else if (item.Proirity == TaskPriorityEnum.Urgent)
+                    {
+            <i class="fad fa-lg fa-fw fa-signal-alt" style="color: red"></i>
+            }
+        </DisplayTemplate>
+    </DxDataGridColumn>
+
+    <DxDataGridColumn Caption="@TitleHeader">
+        <DisplayTemplate>
+            @{
+                var item = context as TaskItem;}
+            <a href="/form/@item.Id">@item.Title</a>
+        </DisplayTemplate>
+    </DxDataGridColumn>
+    <DxDataGridDateEditColumn Field="@nameof(TaskItem.Created)" Caption="@CreatedHeader" DisplayFormat="g" />
+    <DxDataGridDateEditColumn Field="@nameof(TaskItem.Done)" Caption="@DoneHeader" DisplayFormat="g" />
+    <DxDataGridColumn Field="@nameof(TaskItem.Sender)" Caption="@SenderHeader" />
+</DxDataGrid>
+
+@code {
+    [Parameter]
+    public string FolderId { get; set; }
+    [Parameter]
+    public string Header { get; set; }
+
+    List<TaskItem> tasks = new();
+
+    readonly string FlagHeader = "Flag".loc();
+    readonly string PriorityHeader = "Priority".loc();
+    readonly string TitleHeader = "Title".loc();
+    readonly string CreatedHeader = "Created".loc();
+    readonly string DoneHeader = "Finished".loc();
+    readonly string SenderHeader = "Sender".loc();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        tasks = await Http.GetFromJsonAsync<List<TaskItem>>($"api/Task/GetTaskList/{FolderId}");
+    }
+
+    void OnHtmlRowDecoration(DataGridHtmlRowDecorationEventArgs<TaskItem> eventArgs)
+    {
+        if (eventArgs.DataItem.IsNew)
+            eventArgs.CssClass += " font-weight-bold";
+    }
+}

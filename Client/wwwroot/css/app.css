@@ -11,6 +11,11 @@ html, body {
     font-weight: bold;
 }
 
+.text, .text th, .text td {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 13px !important;
+}
+
 a, .btn-link {
     color: #0366d6;
 }

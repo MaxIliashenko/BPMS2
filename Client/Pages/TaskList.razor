@@ -1,11 +1,10 @@
 ﻿@page "/tasks/{id}/{header}"
 
-<h3>@header (@id)</h3>
+<TaskListComponent FolderId="@id" Header="@header" />
 
 @code {
     [Parameter]
     public string id { get; set; }
     [Parameter]
     public string header { get; set; }
-
 }

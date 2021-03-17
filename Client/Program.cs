@@ -1,10 +1,10 @@
+using BPMS.Components.Service;
 using BPMS.Shared.UI;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using BPMS.Components.Service;
 
 namespace BPMS.Client
 {
@@ -21,8 +21,8 @@ namespace BPMS.Client
             // Supply HttpClient instances that include access tokens when making requests to the server project
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("BPMS2.ServerAPI"));
 
-            builder.Services.AddScoped<IAjaxService, AjaxService>();
-            builder.Services.AddScoped<IStateNotificationService, StateNotificationService>();
+            builder.Services.AddScoped<AjaxService>();
+            builder.Services.AddScoped<StateNotificationService>();
 
             await builder.Build().RunAsync();
         }

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <AssemblyVersion>1.0.21076.3</AssemblyVersion>
-    <FileVersion>1.0.21076.3</FileVersion>
+    <AssemblyVersion>1.0.21076.5</AssemblyVersion>
+    <FileVersion>1.0.21076.5</FileVersion>
     <RootNamespace>BPMS.Shared</RootNamespace>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>

@@ -1,4 +1,4 @@
-﻿@using BPMS.Shared.Layout
+﻿@inject IAjaxService ajaxService
 
 <div class="m-5 row">
     <div class="col-md-10 offset-md-1">
@@ -16,13 +16,11 @@
     </div>
 </div>
 
-
 @code {
     List<HomeItem> homeItems = new();
 
     protected override async Task OnInitializedAsync()
     {
-        homeItems.Add(new HomeItem { Id = new Guid("5fe8ca42-34b2-4162-a37e-aaf501144632"), Text = "Audit", FAIcon = "fad fa-file-search" });
-        homeItems.Add(new HomeItem { Id = new Guid("56db5895-4a5b-44b7-9e23-aaf700db4471"), Text = "Audit List", FAIcon = "fas fa-list" });
+        homeItems = await ajaxService.GetData<List<HomeItem>>("api/Home/GetHome");
     }
 }

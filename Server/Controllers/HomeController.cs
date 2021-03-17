@@ -13,18 +13,24 @@ namespace BPMS.Server.Controllers
     public class HomeController : ControllerBase
     {
         private IMenuService _menuService { get; }
+        private IHomeService _homeService { get; }
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(IMenuService menuService, ILogger<HomeController> logger)
+        public HomeController(IMenuService menuService, IHomeService homeService, ILogger<HomeController> logger)
         {
             _menuService = menuService;
+            _homeService = homeService;
             _logger = logger;
         }
 
         [HttpGet]
         [Route("GetMenu")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<MenuItem>>> GetMenuItems()
-            => Ok(_menuService.GetMenuItems());
+        public async Task<ActionResult<IEnumerable<MenuItem>>> GetMenuItems() => await _menuService.GetMenuItems();
+
+        [HttpGet]
+        [Route("GetHome")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<HomeItem>>> GetHomeItems() => await _homeService.GetHomeItems();
     }
 }

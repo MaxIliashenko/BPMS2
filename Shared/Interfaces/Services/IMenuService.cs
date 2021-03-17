@@ -1,10 +1,11 @@
 ﻿using BPMS.Shared.Layout;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BPMS.Shared.Interfaces.Services
 {
     public interface IMenuService
     {
-        List<MenuItem> GetMenuItems();
+        Task<List<MenuItem>> GetMenuItems();
     }
 }

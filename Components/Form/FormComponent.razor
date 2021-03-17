@@ -1,8 +1,4 @@
-﻿@using BPMS.Shared.Form
-@using BPMS.Components.Form.Controls
-@using BPMS.Shared.UI
-
-@inject HttpClient Http
+﻿@inject IAjaxService ajaxService
 @inject IStateNotificationService StateNotificationService
 
 <h2>@form.Title (@Id)</h2>
@@ -14,7 +10,6 @@
     }
 
 </DxFormLayout>
-
 
 @code {
     [Parameter]
@@ -34,6 +29,6 @@
     protected override async Task OnParametersSetAsync()
     {
         Console.WriteLine($"Get form data {Id}");
-        form = await Http.GetFromJsonAsync<FormData>($"api/Form/GetForm/{Id}");
+        form = await ajaxService.GetData<FormData>($"api/Form/GetForm/{Id}");
     }
 }

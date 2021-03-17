@@ -3,12 +3,13 @@ using BPMS.Shared.Layout;
 using BPMS.Shared.Localization;
 using BPMS.Shared.Security;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BPMS.Server.Services
 {
     public class MenuService : IMenuService
     {
-        public List<MenuItem> GetMenuItems()
+        public async Task<List<MenuItem>> GetMenuItems()
         {
             var items = new List<MenuItem>();
 

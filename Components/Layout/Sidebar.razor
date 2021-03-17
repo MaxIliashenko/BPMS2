@@ -1,5 +1,4 @@
-﻿@using BPMS.Shared.Layout
-@inject HttpClient Http
+﻿@inject IAjaxService ajaxService
 
 <div class="bg-primary text-white p-1 headerline">
     <div class="d-inline-block mx-3"><i class="fad fa-user-alien fa-2x"></i></div>
@@ -25,6 +24,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        items = await Http.GetFromJsonAsync<List<TaskTreeItem>>("api/Task/GetTaskTree");
+        items = await ajaxService.GetData<List<TaskTreeItem>>("api/Task/GetTaskTree");
     }
 }

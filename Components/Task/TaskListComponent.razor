@@ -1,6 +1,4 @@
-﻿@using BPMS.Shared.Layout
-@using BPMS.Shared.Localization
-@inject HttpClient Http
+﻿@inject IAjaxService ajaxService
 
 <h2>@Header</h2>
 
@@ -69,7 +67,7 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        tasks = await Http.GetFromJsonAsync<List<TaskItem>>($"api/Task/GetTaskList/{FolderId}");
+        tasks = await ajaxService.GetData<List<TaskItem>>($"api/Task/GetTaskList/{FolderId}");
     }
 
     void OnHtmlRowDecoration(DataGridHtmlRowDecorationEventArgs<TaskItem> eventArgs)

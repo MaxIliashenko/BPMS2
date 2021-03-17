@@ -1,5 +1,4 @@
-﻿@using BPMS.Shared.Layout
-@inject HttpClient Http
+﻿@inject IAjaxService ajaxService
 
 <div class="bg-primary text-white headerline">
     <DxMenu Orientation="Orientation.Horizontal">
@@ -19,6 +18,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        items = await Http.GetFromJsonAsync<List<MenuItem>>("api/Home/GetMenu");
+        items = await ajaxService.GetData<List<MenuItem>>("api/Home/GetMenu");
     }
 }

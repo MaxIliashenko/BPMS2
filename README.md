@@ -1,9 +1,9 @@
 # BPMS2
 Experimental Blazor-powered [BPMS](https://www.interfacing.com/Rapid-Application-Development-Tools)
 
-# Prerequisites
+# Requiered
 * [.NET 6 preview 2 or higher](https://dotnet.microsoft.com/download/dotnet/6.0)
-* DevExpress Blazor Components (installed via Nuget)
+* [Blazor UI Components by DevExpress](https://www.devexpress.com/blazor/) (installed via Nuget)
 * [npm](https://www.npmjs.com/get-npm)
 * [Visual Studio 2019 16.10](https://visualstudio.microsoft.com/vs/preview/) or higher
 
